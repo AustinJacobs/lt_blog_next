@@ -9,8 +9,24 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 * {
   box-sizing: border-box;
+}
+
+img {
+  border-radius: 5px;
+}
+
+button {
+  padding: 1em;
+  width: 80px;
+  text-align: center;
+  background-color: #B71A04;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
 }
