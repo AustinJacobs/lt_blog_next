@@ -3,6 +3,14 @@
   max-width: 1000px;
 }
 
+.card {
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px;
+  padding: 1rem 1rem 1rem 1rem;
+  max-width: 1000px;
+  margin-bottom: 2em;
+}
+
 .pointer {
   cursor: pointer;
 }

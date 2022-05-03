@@ -34,34 +34,36 @@ export default function Home({ articles }) {
         {articles.map((article) => (
           <Link key={article.node._meta.id} href={`/${article.node._meta.uid}`}>
             <a>
-              <Image
-                src={article.node.feature_image.url}
-                alt={article.node.feature_image.alt}
-                width='1000px'
-                height='500px'
-              />
-              <h2>{article.node.title[0].text}</h2>
-              <p>
-                Published on{' '}
-                {format(
-                  new Date(article.node.published_at.substring(0, 10)),
-                  'MMM dd, yyyy'
-                )}
-              </p>
-              <div>
-                {article.node.body
-                  .find((data) => data.type === 'inline_text')
-                  ?.primary?.description?.map(({ text }, index) => {
-                    if (index === 0) {
-                      return (
-                        <p key={index}>
-                          {text.substring(0, 190)}...
-                          <br />
-                        </p>
-                      );
-                    }
-                    return '';
-                  })}
+              <div className={styles.card}>
+                <Image
+                  src={article.node.feature_image.url}
+                  alt={article.node.feature_image.alt}
+                  width='1000px'
+                  height='500px'
+                />
+                <h2>{article.node.title[0].text}</h2>
+                <p>
+                  Published on{' '}
+                  {format(
+                    new Date(article.node.published_at.substring(0, 10)),
+                    'MMM dd, yyyy'
+                  )}
+                </p>
+                <div>
+                  {article.node.body
+                    .find((data) => data.type === 'inline_text')
+                    ?.primary?.description?.map(({ text }, index) => {
+                      if (index === 0) {
+                        return (
+                          <p key={index}>
+                            {text.substring(0, 190)}...
+                            <br />
+                          </p>
+                        );
+                      }
+                      return '';
+                    })}
+                </div>
               </div>
             </a>
           </Link>
